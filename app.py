@@ -7,7 +7,7 @@ st.title("🤖 Gia sư Toán AI")
 if "GOOGLE_API_KEY" in st.secrets:
     genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
     # Dòng này phải nằm sát lề trái, thẳng hàng với dòng if
-    model = genai.GenerativeModel('gemini-1.0-pro')
+    model = genai.GenerativeModel('gemini-1.5-flash')
 else:
     st.error("Chưa cấu hình API Key trong Secrets!")
     st.stop()
