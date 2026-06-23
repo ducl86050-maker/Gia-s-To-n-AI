@@ -1,7 +1,7 @@
 ﻿import streamlit as st
 import google.generativeai as genai
 
-st.title("🤖 Chào mừng em đến với gia sư Toán Soleil!!")
+st.title("🤖 Chào mừng em đến với gia sư Toán Soleil!!(⁀ᗢ⁀)")
 
 if "GOOGLE_API_KEY" in st.secrets:
     genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
@@ -17,7 +17,7 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-if prompt := st.chat_input("Hãy để chị giải quyết thắc mắc của em nhé!"):
+if prompt := st.chat_input("Hãy để chị giải quyết thắc mắc của em nhé!(´｡• ω •｡`) ♡"):
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
