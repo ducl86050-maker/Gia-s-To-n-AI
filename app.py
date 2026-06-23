@@ -3,10 +3,12 @@ import google.generativeai as genai
 
 st.title("🤖 Gia sư Toán AI")
 
-# Kiểm tra API Key từ "két sắt" của Streamlit
+# Kiểm tra API Key từ "két sắt" (Secrets) của Streamlit
 if "GOOGLE_API_KEY" in st.secrets:
     genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
-    model = genai.GenerativeModel('gemini-pro')
+    
+    # Sử dụng model mới nhất và ổn định hơn
+    model = genai.GenerativeModel('gemini-1.5-flash')
 else:
     st.error("Chưa cấu hình GOOGLE_API_KEY. Hãy vào Settings > Secrets và dán khóa API vào!")
     st.stop()
@@ -25,6 +27,7 @@ if prompt := st.chat_input("Hôm nay mình giải bài toán nào nhỉ?"):
 
     with st.chat_message("assistant"):
         try:
+            # Tạo phản hồi với model mới
             response = model.generate_content(prompt)
             st.markdown(response.text)
             st.session_state.messages.append({"role": "assistant", "content": response.text})
