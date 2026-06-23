@@ -1,7 +1,7 @@
 ﻿import streamlit as st
 import google.generativeai as genai
 
-st.title("🤖 Chào mừng em đến với gia sư Toán Soleil (⁀ᗢ⁀) ")
+st.title("🤖 Chào mừng em đến với gia sư Toán Soleil!! (⁀ᗢ⁀) ")
 
 # Kiểm tra Secrets
 if "GOOGLE_API_KEY" in st.secrets:
