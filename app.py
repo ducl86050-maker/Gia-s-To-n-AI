@@ -8,7 +8,7 @@ if "GOOGLE_API_KEY" in st.secrets:
     genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
     
     # Sử dụng model mới nhất và ổn định hơn
-    model = genai.GenerativeModel('gemini-1.5-flash')
+   model = genai.GenerativeModel('gemini-pro')
 else:
     st.error("Chưa cấu hình GOOGLE_API_KEY. Hãy vào Settings > Secrets và dán khóa API vào!")
     st.stop()
